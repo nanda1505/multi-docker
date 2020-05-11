@@ -3,7 +3,7 @@ services:
   postgres:
     image: "postgres:latest"
     environment:
-      - PGPASSWORD=postgres_password
+      - POSTGRES_PASSWORD=postgres_password
   redis:
     image: "redis:latest"
   nginx:
@@ -27,7 +27,7 @@ services:
       - ./server:/app
     environment:
       - REDIS_HOST=redis
-      - REDIS_PORT=6378
+      - REDIS_PORT=6379
       - PGUSER=postgres
       - PGHOST=postgres
       - PGDATABASE=postgres
