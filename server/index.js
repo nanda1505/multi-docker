@@ -52,6 +52,7 @@ app.get("/values/current", async (req, res) => {
   console.log("server->index.js -> Called /values/current method");
 
   redisClient.hgetall("values", (err, values) => {
+    console.log("server->index.js -> Redis values" + values);
     res.send(values);
   });
 });
