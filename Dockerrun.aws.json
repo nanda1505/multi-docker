@@ -27,14 +27,14 @@
       "image": "nanda1505/multi-nginx",
       "hostname": "client",
       "essential": true,
-      "memory": 128,
       "portMappings": [
         {
           "hostPort": 80,
           "containerPort": 80
         }
       ],
-      "links": ["client", "server"]
+      "links": ["client", "server"],
+      "memory": 128
     }
   ]
 }
