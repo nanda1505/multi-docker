@@ -21,3 +21,16 @@ after_success:
   - docker push nanda1505/multi-nginx
   - docker push nanda1505/multi-server
   - docker push nanda1505/multi-worker
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: us-west-2
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-west-2-314498043024
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_keey_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
